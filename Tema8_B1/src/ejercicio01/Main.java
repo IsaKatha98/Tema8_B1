@@ -37,6 +37,15 @@ public class Main {
 		//Si intentamos settear la hora a 32.
 		System.out.println(reloj.setHora(32));
 		
+		//Probamos la funcion seg.
+		System.out.println("Ingrese seg: ");
+		int seg=sc.nextInt();
+		
+		HoraExacta h1=new HoraExacta(hora, min, seg);
+
+		h1.inc();
+		
+		System.out.println(h1.toString());
 	
 
 	}

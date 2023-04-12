@@ -23,12 +23,12 @@ public class Hora {
 		
 		this.min++;
 		
-		if (this.min>59) {
+		if (this.min==60) {
 			
 			this.min=0;
 			this.hora++;
 			
-			if (this.hora>23) {
+			if (this.hora==24) {
 				this.hora=0;
 			}
 		}

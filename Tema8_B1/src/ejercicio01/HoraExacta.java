@@ -20,7 +20,7 @@ public class HoraExacta extends Hora {
 	public void setSegundo (int seg) {
 		
 		if (seg>0&&seg<=59) {
-			
+			this.seg= seg;
 		}
 	}
 	
@@ -28,7 +28,7 @@ public class HoraExacta extends Hora {
 		
 		this.seg++;
 		
-		if (this.seg>59) {
+		if (this.seg==60) {
 			
 			this.seg=0;
 
@@ -36,6 +36,15 @@ public class HoraExacta extends Hora {
 		
 		}
 	}
+public String toString () {
+		
+		String res="";
+		
+		res+="La hora es: "+this.hora+":"+min+":"+seg;
+		
+		return res;
+	}
+
 
 	
 }
