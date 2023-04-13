@@ -41,7 +41,7 @@ public class Main {
 		System.out.println("Ingrese seg: ");
 		int seg=sc.nextInt();
 		
-		HoraExacta h1=new HoraExacta(hora, min, seg);
+		HoraExacta h1=new HoraExacta(reloj.hora, reloj.min, seg);
 
 		h1.inc();
 		

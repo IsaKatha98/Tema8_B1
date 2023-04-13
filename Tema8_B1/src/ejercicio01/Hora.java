@@ -1,10 +1,11 @@
 package ejercicio01;
 
 public class Hora {
+	//Se ponen los atributos protected para que se puedan heredar.
 	
-	int hora=0;
+	protected int hora=0;
 	
-	int min=0;
+	protected int min=0;
 	
 	public Hora (int hora, int min) {
 		
@@ -21,52 +22,69 @@ public class Hora {
 	
 	public void inc () {
 		
-		this.min++;
+		min++;
 		
-		if (this.min==60) {
+		if (min>=60) {
 			
-			this.min=0;
-			this.hora++;
+			min=0;
+			hora++;
 			
-			if (this.hora==24) {
-				this.hora=0;
+			if (hora==24) {
+				hora=0;
 			}
 		}
 		
 	}
 	
-	public boolean setMinutos (int min) {
+	public boolean setMinutos (int valor) {
 		
-		boolean valor =false;
+		boolean valido =false;
 		
-		if (min>0&&min<=59) {
+		//Tenemos que comprobar si valor es un número válido.
+		//Si lo es, se le asigna a min.
+		if (valor>0&&valor<=59) {
 			
-			this.min=min;
-			valor=true;
+			min=valor;
+			valido=true;
 		}
 		
-		return valor;
+		return valido;
 		
 	}
 	
-	public boolean setHora (int hora) {
+	public boolean setHora (int valor) {
 		
-		boolean valor= false;
+		boolean valido= false;
 		
-		if (hora>0&&hora<=23) {
+		//Tenemos que comprobar si valor es un número válido.
+		//Si lo es, se le asigna a min.
+		if (valor>0&&valor<=23) {
 			
-			this.hora=hora;
-			valor=true;
+			hora=valor;
+			valido=true;
 		}
 		
-		return valor;
+		return valido;
 	}
 	
+	@Override
 	public String toString () {
 		
-		String res="";
+		String res="La hora es:";
 		
-		res+="La hora es: "+this.hora+":"+min;
+		if (hora<=9) {
+			
+			res+="0";
+		}
+		
+		
+		res+=hora+":";
+		
+		if (min<=9) {
+			res+="0";
+		}
+		
+		res+=min;
 		
 		return res;
 	}

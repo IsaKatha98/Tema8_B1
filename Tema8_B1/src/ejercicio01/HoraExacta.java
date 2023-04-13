@@ -17,30 +17,38 @@ public class HoraExacta extends Hora {
 	
 	}
 	
-	public void setSegundo (int seg) {
+	public void setSegundo (int valor) {
 		
-		if (seg>0&&seg<=59) {
-			this.seg= seg;
+		if (valor>0&&valor<=59) {
+			seg=valor;
 		}
 	}
 	
+	@Override
 	public void inc() {
 		
-		this.seg++;
+		seg++;
 		
-		if (this.seg==60) {
+		if (seg==60) {
 			
-			this.seg=0;
-
+			seg=0;
 			super.inc();
 		
 		}
 	}
+	
+	
 public String toString () {
 		
-		String res="";
+		String res=super.toString();
 		
-		res+="La hora es: "+this.hora+":"+min+":"+seg;
+		res+=":";
+			
+		if (seg<=9) {
+			res+="0";
+		}
+		
+		res+= seg;
 		
 		return res;
 	}
