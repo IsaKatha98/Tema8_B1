@@ -12,9 +12,13 @@ public class Productos {
 	}
 
 	public Productos(String nombre, double precio) {
-		super();
 		this.nombre = nombre;
-		this.precio = precio;
+		
+		if (precio>0) {
+			
+			this.precio = precio;
+		}
+		
 	}
 
 	public String getNombre() {
@@ -30,7 +34,12 @@ public class Productos {
 	}
 
 	public void setPrecio(double precio) {
-		this.precio = precio;
+		
+		if (precio>0) {
+			this.precio = precio;
+			
+		}
+		
 	}
 	
 	public double calcularPrecio (int cant) {
