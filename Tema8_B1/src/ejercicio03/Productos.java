@@ -54,5 +54,15 @@ public class Productos {
 		return PVP;
 	}
 	
+	public String toString () {
+		
+		String res="";
+		
+		res="Nombre: "+nombre+"\n"+
+				"Precio: "+precio+"\n";
+		
+		return res;
+		
+	}
 
 }
