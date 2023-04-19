@@ -47,6 +47,7 @@ public class Main {
 		
 		System.out.println(h1.toString());
 	
+		sc.close();
 
 	}
 
