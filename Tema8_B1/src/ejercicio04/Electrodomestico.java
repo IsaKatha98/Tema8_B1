@@ -85,13 +85,17 @@ public class Electrodomestico {
 		return peso;
 	}
 
+	/**
+	 * Método toString de la clase Electrodoméstico.
+	 * 
+	 */
 	public String toString() {
 
 		String res = "";
 
 		res = "Precio base: " + this.precioBase + " euros; \n" 
 				+"Precio final: "+precioFinal()+ "euros; \n"
-				+ "Color: " + this.color + ";\n" 
+			+ "Color: " + this.color + ";\n" 
 			+ "Consumo energético: "+ this.consumo + ";\n" 
 				+ "Peso: " + this.peso + " kg; \n";
 
@@ -99,7 +103,7 @@ public class Electrodomestico {
 	}
 
 	/**
-	 * TERMINAR
+	 * Método que comprueba la letra del consumo energético y la settea correspondientemente.
 	 * 
 	 * @param letra
 	 */
@@ -118,6 +122,11 @@ public class Electrodomestico {
 
 	}
 	
+	/**
+	 *Método que comprueba el color del electrodoméstico y lo settea correspondientemente.
+	 *
+	 * @param color
+	 */
 	private void comprobarColor (String color) {
 		
 		if (color.equalsIgnoreCase("blanco")||color.equalsIgnoreCase("rojo")||color.equalsIgnoreCase("azul")||color.equalsIgnoreCase("gris")||color.equalsIgnoreCase("negro")) {
@@ -131,6 +140,11 @@ public class Electrodomestico {
 		}
 	}
 
+	/**
+	 * Método que devuelve el precio final según el precio base, el consumo energético y el peso del producto.
+	 * 
+	 * @return precioFinal
+	 */
 	public double precioFinal() {
 
 		double precioFinal = precioBase;
