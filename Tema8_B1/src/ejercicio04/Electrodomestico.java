@@ -1,22 +1,45 @@
 package ejercicio04;
 
+/**
+ * Clase Elextrodoméstico que gestiona los objetos de son esta clase.
+ * 
+ * @author isabelkatharinaloerzer
+ */
 public class Electrodomestico {
 
+	/**
+	 * Atributo precioBase, que es de 100.
+	 */
 	protected double precioBase = 100;
 
+	/**
+	 * Enumerado de tipo color.
+	 */
 	enum Color {
 		blanco, negro, rojo, azul, gris
 	}
 
-	protected Color color= Color.blanco;
+	/**
+	 * Atributo color, blanco por defecto.
+	 */
+	protected Color color = Color.blanco;
 
+	/**
+	 * Enumerado de tipo Consumo.
+	 */
 	enum Consumo {
-		
+
 		A, B, C, D, E, F
 	}
 
-	protected Consumo consumo= Consumo.F;
+	/**
+	 * Atributo de tipo consumo, F por defeccto.
+	 */
+	protected Consumo consumo = Consumo.F;
 
+	/**
+	 * Atributo peso, 5 por defecto.
+	 */
 	protected double peso = 5;
 
 	/**
@@ -47,6 +70,14 @@ public class Electrodomestico {
 		}
 	}
 
+	/**
+	 * Constructor Electrodoméstico con todos los parámetros.
+	 * 
+	 * @param precioBase
+	 * @param color
+	 * @param consumo
+	 * @param peso
+	 */
 	public Electrodomestico(double precioBase, String color, char consumo, double peso) {
 
 		if (precioBase >= 0) {
@@ -55,12 +86,11 @@ public class Electrodomestico {
 
 		}
 
-		//Llamamos a la función comprobarColor.
+		// Llamamos a la función comprobarColor.
 		comprobarColor(color);
-		
-		//Llamamos a la función comprobarConsumoEnergético.
+
+		// Llamamos a la función comprobarConsumoEnergético.
 		comprobarConsumoEnergetico(consumo);
-		
 
 		if (peso >= 0) {
 
@@ -69,6 +99,7 @@ public class Electrodomestico {
 
 	}
 
+	// Métodos getters y setters.
 	public double getPrecioBase() {
 		return precioBase;
 	}
@@ -93,55 +124,57 @@ public class Electrodomestico {
 
 		String res = "";
 
-		res = "Precio base: " + this.precioBase + " euros; \n" 
-				+"Precio final: "+precioFinal()+ "euros; \n"
-			+ "Color: " + this.color + ";\n" 
-			+ "Consumo energético: "+ this.consumo + ";\n" 
-				+ "Peso: " + this.peso + " kg; \n";
+		res = "Precio base: " + this.precioBase + " euros; \n" + "Precio final: " + precioFinal() + "euros; \n"
+				+ "Color: " + this.color + ";\n" + "Consumo energético: " + this.consumo + ";\n" + "Peso: " + this.peso
+				+ " kg; \n";
 
 		return res;
 	}
 
 	/**
-	 * Método que comprueba la letra del consumo energético y la settea correspondientemente.
+	 * Método que comprueba la letra del consumo energético y la settea
+	 * correspondientemente.
 	 * 
 	 * @param letra
 	 */
 	private void comprobarConsumoEnergetico(char letra) {
 
-		if (letra=='A'||letra=='B'||letra=='C'||letra=='D'||letra=='E'||letra=='F'){
-			
-			//Aquí se establece consumo según la letra.
-			//se hace String.valueof porque letra es un char
-			this.consumo=Consumo.valueOf(String.valueOf(letra));		
-	
+		if (letra == 'A' || letra == 'B' || letra == 'C' || letra == 'D' || letra == 'E' || letra == 'F') {
+
+			// Aquí se establece consumo según la letra.
+			// se hace String.valueof porque letra es un char
+			this.consumo = Consumo.valueOf(String.valueOf(letra));
+
 		} else {
-			
-			this.consumo=Consumo.F;
+
+			this.consumo = Consumo.F;
 		}
 
 	}
-	
+
 	/**
-	 *Método que comprueba el color del electrodoméstico y lo settea correspondientemente.
+	 * Método que comprueba el color del electrodoméstico y lo settea
+	 * correspondientemente.
 	 *
 	 * @param color
 	 */
-	private void comprobarColor (String color) {
-		
-		if (color.equalsIgnoreCase("blanco")||color.equalsIgnoreCase("rojo")||color.equalsIgnoreCase("azul")||color.equalsIgnoreCase("gris")||color.equalsIgnoreCase("negro")) {
-			
-			//Se asigna el color
-			this.color=Color.valueOf(color);
-		
+	private void comprobarColor(String color) {
+
+		if (color.equalsIgnoreCase("blanco") || color.equalsIgnoreCase("rojo") || color.equalsIgnoreCase("azul")
+				|| color.equalsIgnoreCase("gris") || color.equalsIgnoreCase("negro")) {
+
+			// Se asigna el color
+			this.color = Color.valueOf(color);
+
 		} else {
-			
-			this.color=Color.blanco;
+
+			this.color = Color.blanco;
 		}
 	}
 
 	/**
-	 * Método que devuelve el precio final según el precio base, el consumo energético y el peso del producto.
+	 * Método que devuelve el precio final según el precio base, el consumo
+	 * energético y el peso del producto.
 	 * 
 	 * @return precioFinal
 	 */

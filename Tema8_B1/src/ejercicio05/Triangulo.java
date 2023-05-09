@@ -1,11 +1,25 @@
 package ejercicio05;
 
+/**
+ * Clase Triángulo que hereda de la clase Polígono
+ * 
+ * @author isabelkatharinaloerzer
+ */
 public class Triangulo extends Poligono {
 
+	/**
+	 * Atributo del lado1.
+	 */
 	private double lado1;
 
+	/**
+	 * Atributo del lado2
+	 */
 	private double lado2;
 
+	/**
+	 * Atributo del lado3
+	 */
 	private double lado3;
 
 	/**
@@ -109,17 +123,24 @@ public class Triangulo extends Poligono {
 	}
 
 	@Override
+	/**
+	 * * Método que devuelve un String con un mensaje tipo con toda la información
+	 * de la clase.
+	 */
 	public String toString() {
 
 		String res = super.toString();
 
-		res += "Lado 1 = " + this.lado1 + "; \n" + "Lado 2 = " + this.lado2
-				+ "; \n" + "Lado 3 = " + this.lado3 + "; \n"+"Área: "+area()+" ;\n";
+		res += "Lado 1 = " + this.lado1 + "; \n" + "Lado 2 = " + this.lado2 + "; \n" + "Lado 3 = " + this.lado3 + "; \n"
+				+ "Área: " + area() + " ;\n";
 
 		return res;
 	}
 
 	@Override
+	/**
+	 * Calcular el área del triángulo en cuestión.
+	 */
 	public double area() {
 
 		double area;

@@ -1,29 +1,35 @@
 package ejercicio04;
 
+/**
+ * Clase Lavadora, que es una subclase de Electrodoméstico.
+ * 
+ * @author isabelkatharinaloerzer
+ */
 public class Lavadora extends Electrodomestico {
-	
+
 	/**
-	 * Atributo
+	 * Atributo carga, 5 por defecto.
 	 */
-	protected double carga= 5;
+	protected double carga = 5;
 
 	/**
 	 * Constructor vacío heredado de Electrodoméstico.
 	 */
 	public Lavadora() {
 		super();
-		
+
 	}
 
 	/**
 	 * Constructor heredado de Electrodoméstico con precioBase y peso.
+	 * 
 	 * @param precioBase
 	 * @param peso
 	 */
-	
+
 	public Lavadora(double precioBase, double peso) {
 		super(precioBase, peso);
-		
+
 	}
 
 	/**
@@ -35,40 +41,51 @@ public class Lavadora extends Electrodomestico {
 	 * @param peso
 	 * @param carga
 	 */
-	
+
 	public Lavadora(double precioBase, String color, char consumo, double peso, double carga) {
 		super(precioBase, color, consumo, peso);
-		
-		if (carga>=0) {
-			
-			this.carga=carga;
+
+		if (carga >= 0) {
+
+			this.carga = carga;
 		}
-	
+
 	}
 
+	// Métodos getters y setters
 	public double getCarga() {
 		return carga;
 	}
-	
-	public String toString () {
-		
-		String res= super.toString();
-		
-		res+="Carga: "+this.carga+ "kg; \n";
-		
+
+	/**
+	 * Método que devuelve un String con un mensaje tipo con toda la información de
+	 * la clase.
+	 */
+	public String toString() {
+
+		String res = super.toString();
+
+		res += "Carga: " + this.carga + "kg; \n";
+
 		return res;
 	}
-	
+
 	@Override
-	public double precioFinal () {
-		
-		double precioFinal=super.precioFinal();
-		
-		if (carga>30) {
-			
-			precioFinal+=50;
+	/**
+	 * Método que calcula el precio final de una lavadora, añadiendo 50 al precio en
+	 * caso de que su carga sea superior a 30.
+	 * 
+	 * @return precioFinal
+	 */
+	public double precioFinal() {
+
+		double precioFinal = super.precioFinal();
+
+		if (carga > 30) {
+
+			precioFinal += 50;
 		}
-		
+
 		return precioFinal;
 	}
 
